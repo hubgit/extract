@@ -26,6 +26,7 @@ add selectors to tell Extract where the data should come from.
 	]
 
 **using:**
+
 	var template = [ '.example', { id: '@id', message: 'h2' } ];
 	var node = document.getElementById('test');
 	var result = Extract.parse(template, node
