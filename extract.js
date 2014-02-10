@@ -10,8 +10,8 @@
 			case '[object Function]':
 				return parseFunction(template, root);
 
-			default:
-				return parseItem(template, root);
+			case '[object String]':
+				return parseString(template, root);
 		}
 	};
 
@@ -46,7 +46,7 @@
 		return template(root);	
 	};
 
-	var parseItem = function(template, root) {
+	var parseString = function(template, root) {
 		// TODO: handle attribute at the end of a longer selector
 		if (template.substring(0, 1) == '@') {
 			return root.getAttribute(template.substring(1));
