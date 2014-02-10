@@ -6,6 +6,9 @@
 
 			case '[object Object]':
 				return parseObject(template, root);
+				
+			case '[object Function]':
+				return parseFunction(template, root);
 
 			default:
 				return parseItem(template, root);
@@ -37,6 +40,10 @@
 		}
 
 		return output;
+	};
+	
+	var parseFunction = function(template, root) {
+		return template(root);	
 	};
 
 	var parseItem = function(template, root) {
