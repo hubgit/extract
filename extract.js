@@ -1,5 +1,7 @@
 (function() {
 	var parse = function(template, root) {
+		root = root || document;
+		
 		switch (Object.prototype.toString.call(template)) {
 			case '[object Array]':
 				return parseArray(template, root);
